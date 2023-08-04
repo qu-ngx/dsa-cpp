@@ -1,16 +1,18 @@
 class Counter
 {
-private:
-    /* data */
+
 public:
-    Counter(/* args */);
-    ~Counter();
+    Counter();
+
+    // Second constructer inits count with int startVal parameter
+    Counter(int startVal);
+
+    // Get current count
+    int getCount();
+
+    // Increase the current count by x
+    void increaseBy(int x);
+
+private:
+    int count;
 };
-
-Counter::Counter(/* args */)
-{
-}
-
-Counter::~Counter()
-{
-}
