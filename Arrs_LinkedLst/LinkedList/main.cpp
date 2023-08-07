@@ -43,6 +43,20 @@ int sum(intNode *head)
     return sum;
 }
 
+bool member(intNode *head, int x)
+{
+    intNode *curr = head;
+
+    while (curr != NULL)
+    {
+        if (curr->data == x)
+            return true;
+        curr = curr->next;
+    }
+
+    return false;
+}
+
 int main()
 {
 
@@ -67,6 +81,11 @@ int main()
     std::cout << "Length of the linked list contains " << length(head) << " nodes" << '\n';
 
     std::cout << "Sum of LinkedLst is " << sum(head) << '\n';
+
+    if (member(head, 1))
+        std::cout << "Linked list does have that int" << '\n';
+    else
+        std::cout << "Linked list doesnt have that int" << '\n';
 
     return 0;
 }
