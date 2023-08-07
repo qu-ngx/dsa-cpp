@@ -14,6 +14,20 @@ void print(intNode *head)
     }
 }
 
+int length(intNode *head)
+{
+    intNode *curr = head;
+
+    int count = 0;
+    while (curr != NULL)
+    {
+        count += 1;
+        curr = curr->next;
+    }
+
+    return count;
+}
+
 int main()
 {
 
@@ -34,6 +48,8 @@ int main()
     head = one;
 
     print(head);
+
+    std::cout << "Length of the linked list contains" << length(head) << "nodes" << '\n';
 
     return 0;
 }
