@@ -1,22 +1,39 @@
+#include "intNode.h"
+#include <cstdlib>
 #include <iostream>
-#include <cstddef>
 
-class IntNode
+void print(intNode *head)
 {
-public:
-    int data;
-    IntNode *next;
-};
+
+    intNode *curr = head;
+
+    while (curr != NULL)
+    {
+        std::cout << curr->data << '\n';
+        curr = curr->next;
+    }
+}
 
 int main()
 {
-    IntNode n;
-    n.data = 5;
-    n.next = NULL;
 
-    IntNode *p = new IntNode;
-    (*p).data = 6;
-    (*p).next = NULL;
+    intNode *head;
+    intNode *one = new intNode;
+    intNode *two = new intNode;
+    intNode *three = new intNode;
 
-    delete p;
+    one->data = 1;
+    one->next = two;
+
+    two->data = 2;
+    two->next = three;
+
+    three->data = 3;
+    three->next = NULL;
+
+    head = one;
+
+    print(head);
+
+    return 0;
 }
