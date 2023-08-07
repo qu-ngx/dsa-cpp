@@ -28,6 +28,21 @@ int length(intNode *head)
     return count;
 }
 
+int sum(intNode *head)
+{
+    intNode *curr = head;
+
+    int sum = 0;
+
+    while (curr != NULL)
+    {
+        sum += curr->data;
+        curr = curr->next;
+    }
+
+    return sum;
+}
+
 int main()
 {
 
@@ -49,7 +64,9 @@ int main()
 
     print(head);
 
-    std::cout << "Length of the linked list contains" << length(head) << "nodes" << '\n';
+    std::cout << "Length of the linked list contains " << length(head) << " nodes" << '\n';
+
+    std::cout << "Sum of LinkedLst is " << sum(head) << '\n';
 
     return 0;
 }
