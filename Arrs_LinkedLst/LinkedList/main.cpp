@@ -14,6 +14,7 @@ void print(intNode *head)
     }
 }
 
+// Get the length of a linked list
 int length(intNode *head)
 {
     intNode *curr = head;
@@ -28,6 +29,7 @@ int length(intNode *head)
     return count;
 }
 
+// Get the sum of a linked list
 int sum(intNode *head)
 {
     intNode *curr = head;
@@ -43,6 +45,7 @@ int sum(intNode *head)
     return sum;
 }
 
+// Check whether member is in linked list or not
 bool member(intNode *head, int x)
 {
     intNode *curr = head;
@@ -55,6 +58,19 @@ bool member(intNode *head, int x)
     }
 
     return false;
+}
+
+// Insert a node after a node
+void insertAfter(intNode *before, int newData)
+{
+    intNode *newNode = new intNode;
+
+    // Assign new data to newNode
+    newNode->data = newData;
+
+    // Node linking
+    newNode->next = before->next;
+    before->next = newNode;
 }
 
 int main()
